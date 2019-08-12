@@ -1,0 +1,230 @@
+<!------------------------------------------------------------------------------
+-  FILENAME:      index.html
+-
+-  AUTHORS:       Wang Xiaofei    START DATE: Monday August 12th 2019
+-
+-  LAST MODIFIED: Monday, August 12th 2019, 4:02:14 am
+-
+-  CONTACT:       xfeiwang@qq.com
+------------------------------------------------------------------------------->
+
+<html>
+
+<head>
+  <title>Hypothesis Verification</title>
+  <style>
+    a:link {
+      text-decoration: none;
+      color: 6464FF
+    }
+
+    a:active {
+      text-decoration: blink
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: 6464FF
+    }
+
+    a:visited {
+      text-decoration: none;
+      color: 551A8B
+    }
+  </style>
+</head>
+
+<!--------------------------------------------------------------------------------------------------->
+<!--                                       Header and Photo                                       --->
+<!--------------------------------------------------------------------------------------------------->
+
+<body style="width:1200; margin:0 auto;">
+  <font size="3" face="Arial">
+    <blockquote>
+      <center>
+        <table border="0">
+          <tbody>
+            <tr>
+              <td width="30"></td>
+              <td width="1200">
+                <center>
+
+                  <!--Header-->
+                  <br><br><br>
+                  <h2><span style="font-size: 25pt">Robust and Fast Hypothesis Verification in 3D Object
+                      Recognition</span></h2>
+                  <br>
+                  <p class="authors">
+                    <span style="font-size: 15pt">
+                      YiLu Zheng<sup>1</sup>&nbsp&nbsp
+                      XiaoFei Wang<sup>1</sup>&nbsp&nbsp
+                      Peng Song<sup>1</sup>&nbsp&nbsp
+                      YinLong Xu<sup>1</sup>&nbsp&nbsp
+                      <br><br>
+                      <sup>1</sup> <a href="http://en.ustc.edu.cn/">University of Science and Technology of China</a>
+                      &nbsp&nbsp&nbsp
+                  </p>
+                  </span>
+                  <p class="authors">&nbsp;</p>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+
+
+      <!-- Figure 1: Overview-->
+      <br>
+      <div align="center">
+        <img src="./imgs/2019-3D-Robust and Fast.png" width="1060" alt="Figure 1">
+      </div>
+      <p class="figure"><strong>Figure 1:</strong> (a) A hypothesis to be verified, where the model (in cyan) has been
+        transformed into the scene (in gray);
+        (b) voxelize the model in its local object space; (c) create a distance map for the model within the
+        voxelization; (d) identify the overlap region
+        by utilizing the voxelization and the distance map. Note that we remove the frontal half of the voxelization in
+        (b) and the distance map in (c) for
+        visualization.</p>
+
+      <!--------------------------------------------------------------------------------------------------->
+      <!--                                            Abstract                                          --->
+      <!--------------------------------------------------------------------------------------------------->
+
+      <hr>
+      <br><br>
+      <div align="justify" width: 1200px>
+
+        <h2>Abstract</h2>
+
+        <span style="font-size: 13pt">
+          <!--<ul>-->
+          3D object recognition requires generating and verifying hypothesis, where a hypothesis means a hypo
+          thesized object together with a hypothesized pose of the object in the scene. Hypothesis verification
+          is typically achieved by transforming the hypothesized object model into the scene based on its pose,
+          estimating the overlap between the transformed model and the scene, and accepting the hypothesis if
+          the overlap area is sufficiently large. This paper develops a robust and fast hypothesis verification
+          approach to improve the recognition accuracy without slowing down its speed. Our key idea is to ident
+          ify corresponding points in the overlap between a hypothesized model and the scene using both point po
+          sition and normal, and to speed up the identification of corresponding points by utilizing a signed di
+          stance transform map defined on the model's voxelization. Moreover, we estimate overlap area from the
+          identified corresponding points more accurately based on an idea of area-weighted vertices. Experimen
+          ts on publicly available datasets demonstrate the robustness and efficiency of our verification appro
+          ach.
+        </span>
+      </div>
+
+      <BR><BR>
+
+
+
+
+      <!--------------------------------------------------------------------------------------------------->
+      <!--                                            Download                                          --->
+      <!--------------------------------------------------------------------------------------------------->
+
+      <hr>
+
+      <div align="justify">
+
+        <h2>Download </h2>
+
+        <!--Click the following link to download:-->
+        <span style="font-size: 13pt; line-height:32px">
+          <a href="index.html">PDF</a> <BR>
+          <a href="index.html">Source Code</a> <BR>
+        </span>
+
+      </div>
+
+      <BR><BR>
+      <!-------------------------------------------- ------------------------------------------------------->
+      <!--                                             Video                                           --->
+      <!--------------------------------------------------------------------------------------------------->
+
+
+      <!-- Video -->
+
+
+
+
+      <!--------------------------------------------------------------------------------------------------->
+      <!--                                            Results                                           --->
+      <!--------------------------------------------------------------------------------------------------->
+
+      <hr>
+
+      <div align="justify">
+
+        <h2>Results </h2>
+
+        <BR>
+        <div align="center"><img src="./imgs/Results1.png" width="1060" alt="Figure 2"></div>
+        <p class="figure">
+          <strong>Figure 1:</strong> Verify hypotheses using (a) our, (b) baseline, (c) distance-only, and (d)
+          normal-only approaches for the object model is well aligned (top) and roughly aligned (bottom). The i
+          dentified overlap regions are colored in orange. The score and computation time are shown on the top
+          left corner of eachresult.
+          <BR><BR>
+
+          <BR>
+          <div align="center"><img src="./imgs/Results2.png" width="540" alt="Figure 2"></div>
+          <p class="figure">
+            <strong>Figure 2:</strong> Evaluate our approach on scan. (a) The target scan; (b) the scene; and (c)
+            our verification result and the corresponding score.
+            <BR><BR>
+
+      </div>
+
+      <BR>
+
+
+      <!--------------------------------------------------------------------------------------------------->
+      <!--                                        Conclusion                                            --->
+      <!--------------------------------------------------------------------------------------------------->
+
+      <hr>
+
+      <div align="justify">
+
+        <h2>Conclusion </h2>
+
+        <p class="text">
+          <span style="font-size: 13pt; line-height:22px">
+            This paper presents a volumetric approach that can improve the accuracy and speed for verifying hypotheses
+            in 3D object
+            recognition. The improvement on accuracy is achieved by a new measure to identify corresponding points in
+            the overlap
+            region and the weighted vertices approach to estimate the overlap area. The improvement on speed is achieved
+            by building
+            a distance transform map on each object model offline such that corresponding points can be identified
+            simply by looking
+            up distance values in the map. Experimental results show that our verification approach is robust to the
+            model pose,
+            scene point density, and object clutter, and can improve the object recognition performance better than a
+            baseline
+            approach.
+        </p>
+        </span>
+      </div>
+
+      <BR><BR>
+
+
+      <!----------------------------CopyRight---------------------------->
+
+      <hr>
+
+      <div align="justify">
+        <center>
+          Copyright @ <a href="../../index.html">Wang Xiaofei</a>
+          <BR><BR>
+      </div>
+
+
+      </div>
+    </blockquote>
+  </font>
+</body>
+
+</html>
